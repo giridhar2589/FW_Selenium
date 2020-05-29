@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
 
 public class Base {
 
@@ -43,4 +44,17 @@ public class Base {
 		driver.manage().window().maximize();
 		return driver;
 	}
+	
+	@AfterTest
+	public void tearDown() {
+		driver.close();
+	}
 }
+
+
+
+
+
+
+
+
